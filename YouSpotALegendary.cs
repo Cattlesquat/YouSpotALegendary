@@ -24,7 +24,13 @@ namespace XRL.World.Parts
                 Seen = true;
                 if (ParentObject.HasPart<GivesRep>())
                 {
+                    bool result = base.Render(E); // Render before we indicate
+                    ParentObject.Indicate(ParentObject.IsHostileTowards(The.Player));
+                    
                     Qud.API.IBaseJournalEntry.DisplayMessage("You spot " + ParentObject.DisplayName + ".");
+                    ParentObject.Indicate(ParentObject.IsHostileTowards(The.Player));
+                    
+                    return result;
                 }
             }
 
