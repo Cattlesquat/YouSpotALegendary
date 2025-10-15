@@ -2,6 +2,8 @@ using System;
 using Qud.API;
 using Qud.UI;
 using XRL.UI;
+using XRL;
+using XRL.World.Capabilities;
 
 namespace XRL.World.Parts
 {
@@ -27,9 +29,21 @@ namespace XRL.World.Parts
                     bool result = base.Render(E); // Render before we indicate
                     ParentObject.Indicate(ParentObject.IsHostileTowards(The.Player));
                     
-                    Qud.API.IBaseJournalEntry.DisplayMessage("You spot " + ParentObject.DisplayName + ".");
+                    String spotted = "You spot " + ParentObject.DisplayName + ".";
+
+                    if (AutoAct.Setting != "")
+                    {
+                        XRL.Messages.MessageQueue.AddPlayerMessage(spotted);
+                        int ichoice = Popup.PickOption(Title: "", Intro: spotted,
+                            Options: new string[] { "Continue", "Interrupt Autoexplore" });
+                        if (ichoice != 0) AutoAct.Interrupt();
+                    }
+                    else
+                    {
+                        Qud.API.IBaseJournalEntry.DisplayMessage(spotted);
+                    }
                     ParentObject.Indicate(ParentObject.IsHostileTowards(The.Player));
-                    
+
                     return result;
                 }
             }
