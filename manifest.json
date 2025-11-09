@@ -4,7 +4,7 @@
     "title": "{{c|You Spot a {{M|Legendary}}!}}",
     "description": "Perhaps you, like me, have difficulty telling legendaries from \"other bright purple things\"?\n\nThe other purple things are probably intentionally confusing, but I craved... clarity! So this naughty little mod will announce legendaries (more specifically, anyone who can perform the water ritual) the same way the \"You spot a dromad caravan.\" messages announce those guys.\n\nIt's fine to add this to an existing game, just be aware that it will announce all your companions to you when you first load, along with anyone else nearby who can use the water ritual.\n\nhttps://github.com/Cattlesquat/YouSpotALegendary",
     "tags": "Stable,Beta,UX,UI,Cosmetic",
-    "version": "1.3",
+    "version": "1.4.1",
     "author": "{{ubernostrum|Cattlesquat}}",
     "previewImage": "preview.png"
 }

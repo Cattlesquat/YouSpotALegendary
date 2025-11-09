@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<options>
+	<option ID="OptionYouSpotALegendaryAddJournalEntry" DisplayText="{{c|You Spot a {{M|Legendary}}!}}: Automatically add journal entries for newly spotted legendaries" Category="Mods" Type="Checkbox" Default="Yes" SearchKeywords="you spot a legendary automatically add journal entries entry"/>
+</options>
